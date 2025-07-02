@@ -15,11 +15,11 @@ public class KikoCoreApplication {
 	}
 
 	// get mapping, tells Spring to use hello() method for answering requests
-	// sent to https://localhost:8080/hello
+	// sent to http://localhost:8080/hello
 	// @RequestParam tells Spring to expect a 'text' value in the request
 	// if no value provided, then use the defaultValue which is "default live"
 	@GetMapping("/hello")
-	public String hello(@RequestParam(value = "text", defaultValue = "World!") String text) {
-		return String.format("Hello " + text);
+	public String hello(@RequestParam(value = "name", defaultValue = "World!") String name) {
+		return String.format("Hello " + name);
 	}
 }
